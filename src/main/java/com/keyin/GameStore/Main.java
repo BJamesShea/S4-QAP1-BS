@@ -5,94 +5,79 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // Preloaded the goats
+        // Preloaded the GOATs
         Store store = new Store();
         store.addGame(new Game(1, "Bloodborne", "Action/Souls Like", 24.99), false);
-        store.addGame(new Game(2, "Baldur's Gate 3", "Isometric RPG", 69.99),false);
-        store.addGame(new Game(3, "Alan Wake 2", "Survival Horror", 49.99),false);
-
-
-
-
+        store.addGame(new Game(2, "Baldur's Gate 3", "Isometric RPG", 69.99), false);
+        store.addGame(new Game(3, "Alan Wake 2", "Survival Horror", 49.99), false);
 
         Scanner scanner = new Scanner(System.in);
         boolean appOn = true;
 
         System.out.println();
-        System.out.println("Welcome to Brandon's Roadside Game-bar!");
-
+        System.out.println("============================================");
+        System.out.println("      WELCOME TO BRANDON'S GAME STORE       ");
+        System.out.println("============================================");
+        System.out.println("Default games have been loaded.");
         System.out.println();
-        System.out.println("Default games have been loaded!");
-        System.out.println();
 
-        while (appOn)
-        {
-            System.out.println("Menu:");
-            System.out.println("1. View available games");
-            System.out.println("2. Add new game");
-            System.out.println("3. Purchase a game");
+        while (appOn) {
+            System.out.println("============================================");
+            System.out.println("                  MAIN MENU                 ");
+            System.out.println("============================================");
+            System.out.println("1. View Available Games");
+            System.out.println("2. Add New Game");
+            System.out.println("3. Purchase a Game");
             System.out.println("4. Exit");
-            System.out.print("\nChoose option! ");
+            System.out.println("============================================");
+            System.out.print("Choose an option: ");
 
-            int choice = scanner.nextInt();
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
+                scanner.nextLine(); // Clear buffer
 
-            switch (choice) {
-                case 1:
-                    store.displayGames();
-                    break;
+                switch (choice) {
+                    case 1:
+                        store.displayGames();
+                        break;
 
+                    case 2:
+                        System.out.println("\n--- Add a New Game ---");
+                        System.out.print("Enter game ID: ");
+                        int id = scanner.nextInt();
+                        scanner.nextLine(); // Clear buffer
 
-                case 2:
-                    System.out.print("Enter game ID: ");
-                    int id = scanner.nextInt();
-                    scanner.nextLine();
+                        System.out.print("Enter game name: ");
+                        String name = scanner.nextLine();
 
-                    System.out.print("Enter game name: ");
-                    String name = scanner.nextLine();
+                        System.out.print("Enter game genre: ");
+                        String genre = scanner.nextLine();
 
+                        System.out.print("Enter game price: $");
+                        double price = scanner.nextDouble();
 
-                    System.out.print("Enter game genre: ");
-                    String genre = scanner.nextLine();
+                        Game newGame = new Game(id, name, genre, price);
+                        store.addGame(newGame, true);
+                        break;
 
+                    case 3:
+                        System.out.println("Purchase feature coming soon!");
+                        break;
 
-                    System.out.print("Enter game price: ");
-                    double price = scanner.nextDouble();
+                    case 4:
+                        System.out.println("Thank you for visiting Brandon's Game Store. See you next time!");
+                        appOn = false;
+                        break;
 
-                    Game newGame = new Game(id, name, genre, price);
-                    store.addGame(newGame, true);
-                    break;
-
-                case 3:
-                    System.out.println("Purchase feature coming soon!");
-                    break;
-
-                case 4:
-                    System.out.println("Thanks for visiting Brandon's Roadside Game-bar!");
-                    appOn = false;
-                    break;
-
-                default:
-                    System.out.println("Invalid option. Oops.");
-
-
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                }
+            } else {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.next(); // Clear invalid input
             }
-
-
         }
 
         scanner.close();
-
-
-
-//        // Three best video games ever made (fight me)
-//        Game game1 = new Game(1, "Bloodborne", "Action/Souls Like", 24.99);
-//        Game game2 = new Game(2, "Baldurs Gate 3", "Isometric RPG", 69.99);
-//        Game game3 = new Game(3, "Alan Wake 2", "Survival Horror", 49.99);
-//
-//        store.addGame(game1);
-//        store.addGame(game2);
-//        store.addGame(game3);
-//
-//        store.displayGames();
     }
 }
