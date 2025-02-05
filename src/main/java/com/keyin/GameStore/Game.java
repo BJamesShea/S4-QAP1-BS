@@ -4,11 +4,14 @@ public class Game {
 
     private int id;
     private String name;
+    private String genre;
     private double price;
 
-    public Game(int id, String name, double price) {
+
+    public Game(int id, String name, String genre, double price) {
         this.id = id;
         this.name = name;
+        this.genre = genre;
         this.price = price;
     }
 
@@ -20,12 +23,17 @@ public class Game {
         return name;
     }
 
+    public String getGenre(){
+        return genre;
+    }
+
     public double getPrice() {
         return price;
     }
 
     public void displayInfo() {
-        System.out.println("ID: " + id + ", Name: " + name + ", Price: " + price);
+        System.out.println("ID: " + id + ", Name: " + name + ", Genre: " + genre + ", Price: $" + price);
+
     }
 }
 
