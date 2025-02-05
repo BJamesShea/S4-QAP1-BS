@@ -9,12 +9,14 @@ public class Store {
 
     public Store() {
         games = new ArrayList<>();
-        System.out.println("It's time to play The Game ( Not sponsored by Triple H )");
+//        System.out.println("It's time to play The Game ( Not sponsored by Triple H )");
     }
 
-    public void addGame(Game game) {
+    public void addGame(Game game, boolean showMessage) {
         games.add(game);
-        System.out.println("Game added: " + game.getName());
+        if (showMessage) {
+            System.out.println("Game added: " + game.getName());
+        }
     }
 
     public void displayGames() {
