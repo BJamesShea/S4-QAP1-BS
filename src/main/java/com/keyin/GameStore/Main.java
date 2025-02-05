@@ -1,4 +1,4 @@
-package com.keyin;
+package com.keyin.GameStore;
 
 public class Main {
     public static void main(String[] args) {
