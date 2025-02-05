@@ -34,7 +34,7 @@ public class Main {
 
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Clear buffer
+                scanner.nextLine();
 
                 switch (choice) {
                     case 1:
@@ -45,7 +45,7 @@ public class Main {
                         System.out.println("\n--- Add a New Game ---");
                         System.out.print("Enter game ID: ");
                         int id = scanner.nextInt();
-                        scanner.nextLine(); // Clear buffer
+                        scanner.nextLine();
 
                         System.out.print("Enter game name: ");
                         String name = scanner.nextLine();
@@ -74,7 +74,7 @@ public class Main {
                 }
             } else {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.next(); // Clear invalid input
+                scanner.next();
             }
         }
 
