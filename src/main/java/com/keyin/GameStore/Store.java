@@ -10,7 +10,6 @@ public class Store {
     public Store() {
         games = new ArrayList<>();
 
-
     }
 
     public List<Game> getGames() {
