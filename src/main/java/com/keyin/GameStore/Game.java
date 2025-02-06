@@ -2,10 +2,10 @@ package com.keyin.GameStore;
 
 public class Game {
 
-    private final int id;
-    private final String name;
-    private final String genre;
-    private final double price;
+    private  int id;
+    private  String name;
+    private  String genre;
+    private double price;
 
 
     public Game(int id, String name, String genre, double price) {
@@ -29,6 +29,22 @@ public class Game {
 
     public double getPrice() {
         return price;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public void displayInfo() {
