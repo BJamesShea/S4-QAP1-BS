@@ -9,7 +9,16 @@ public class Store {
 
     public Store() {
         games = new ArrayList<>();
-//        System.out.println("It's time to play The Game ( Not sponsored by Triple H )");
+
+
+    }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
     }
 
     public void addGame(Game game, boolean showMessage) {
