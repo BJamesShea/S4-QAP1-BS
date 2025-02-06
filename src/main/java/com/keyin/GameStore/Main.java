@@ -11,6 +11,7 @@ public class Main {
         store.addGame(new Game(2, "Baldur's Gate 3", "Isometric RPG", 69.99), false);
         store.addGame(new Game(3, "Alan Wake 2", "Survival Horror", 49.99), false);
 
+
         Scanner scanner = new Scanner(System.in);
         boolean appOn = true;
 
@@ -69,6 +70,7 @@ public class Main {
                         appOn = false;
                         break;
 
+                        // invalid
                     default:
                         System.out.println("Invalid option. Please try again.");
                 }
