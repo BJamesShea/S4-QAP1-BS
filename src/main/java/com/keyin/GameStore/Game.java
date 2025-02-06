@@ -2,9 +2,9 @@ package com.keyin.GameStore;
 
 public class Game {
 
-    private  int id;
-    private  String name;
-    private  String genre;
+    private int id;
+    private String name;
+    private String genre;
     private double price;
 
 
